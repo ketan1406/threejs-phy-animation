@@ -3,7 +3,7 @@ import * as THREE from "three";
 const sceneMiddle = new THREE.Vector3(0, 0, 0);
 
 function getBody(RAPIER, world) {
-    const size = 0.1 + Math.random() * 0.25;
+    const size = 0.1 + Math.random() * 0.35;
     const range = 6;
     const density = size  * 1.0;
     let x = Math.random() * range - range * 0.5;
@@ -16,7 +16,7 @@ function getBody(RAPIER, world) {
     let colliderDesc = RAPIER.ColliderDesc.ball(size).setDensity(density);
     world.createCollider(colliderDesc, rigid);
   
-    const geometry = new THREE.OctahedronGeometry(size, 1);
+    const geometry = new THREE.OctahedronGeometry(size, 0);
     const material = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       flatShading: true
@@ -36,8 +36,13 @@ function getBody(RAPIER, world) {
       let { x, y, z } = rigid.translation();
       let pos = new THREE.Vector3(x, y, z);
       let dir = pos.clone().sub(sceneMiddle).normalize();
-      rigid.addForce(dir.multiplyScalar(-0.5), true);
+      rigid.addForce(dir.multiplyScalar(-0.25), true);
       mesh.position.set(x, y, z);
+
+      // Add individual rotation for the mesh
+      mesh.rotation.x += 0.01; // Rotate around X-axis
+      mesh.rotation.y += 0.01; // Rotate around Y-axis
+      mesh.rotation.z += 0.01; // Rotate around Z-axis
     }
     return { mesh, rigid, update };
   }
