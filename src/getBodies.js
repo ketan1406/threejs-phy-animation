@@ -16,7 +16,7 @@ function getBody(RAPIER, world) {
     let colliderDesc = RAPIER.ColliderDesc.ball(size).setDensity(density);
     world.createCollider(colliderDesc, rigid);
   
-    const geometry = new THREE.IcosahedronGeometry(size, 1);
+    const geometry = new THREE.OctahedronGeometry(size, 1);
     const material = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       flatShading: true
@@ -44,7 +44,7 @@ function getBody(RAPIER, world) {
 
   function getMouseBall (RAPIER, world) {
     const mouseSize = 0.25;
-    const geometry = new THREE.IcosahedronGeometry(mouseSize, 8);
+    const geometry = new THREE.OctahedronGeometry(mouseSize, 8);
     const material = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       emissive: 0xffffff,

@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { getBody, getMouseBall } from "./getBodies.js";
-import RAPIER from 'https://cdn.skypack.dev/@dimforge/rapier3d-compat@0.11.2';
+import RAPIER from '@dimforge/rapier3d-compat';
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
