@@ -50,3 +50,11 @@ An interactive 3D physics-based animation using Three.js, showcasing realistic o
     │   ├── getBodies.js         # Physics body generator
     │   ├── main.js              # Main script for scene setup
     ├── vite.config.js           # Build configuration
+
+## 📜 License
+
+Distributed under MIT License. See `LICENSE` for more information.
+
+## ⚡ Performance
+
+[![Lighthouse](https://img.shields.io/badge/Lighthouse-98-green?logo=lighthouse&style=flat)](https://pagespeed.web.dev/)
